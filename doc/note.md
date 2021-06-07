@@ -152,7 +152,7 @@ The Note object stores pitch values as Midi index, and provides methods that all
 
 - returns [chordType] Chord with source as root note
 
-- see [Chord](doc/chord.md)
+- see [Chord](chord.md)
 
 
 
@@ -161,5 +161,5 @@ The Note object stores pitch values as Midi index, and provides methods that all
 
 - returns [scaleType] Scale with source as tonic
 
-- see [Scale](doc/scale.md)
+- see [Scale](scale.md)
 
