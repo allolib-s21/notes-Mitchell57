@@ -19,16 +19,6 @@
 using namespace al;
 using namespace theory;
 
-
-
-
-
-
-// This example shows how to use SynthVoice and SynthManagerto create an audio
-// visual synthesizer. In a class that inherits from SynthVoice you will
-// define the synth's voice parameters and the sound and graphic generation
-// processes in the onProcess() functions.
-
 class SquareWave : public SynthVoice
 {
 public:
@@ -82,22 +72,15 @@ public:
                               mOsc3() * (a / 3.0) +
                               mOsc5() * (a / 5.0) +
                               mOsc7() * (a / 7.0));
-
       float s2;
       mPan(s1, s1, s2);
       io.out(0) += s1;
       io.out(1) += s2;
     }
-    // We need to let the synth know that this voice is done
-    // by calling the free(). This takes the voice out of the
-    // rendering chain
     if (mAmpEnv.done())
       free();
   }
 
-  // The triggering functions just need to tell the envelope to start or release
-  // The audio processing function checks when the envelope is done to remove
-  // the voice from the processing chain.
   void onTriggerOn() override { mAmpEnv.reset(); }
   void onTriggerOff() override { mAmpEnv.release(); }
 };
@@ -106,31 +89,17 @@ public:
 class MyApp : public App
 {
 public:
-  // GUI manager for SquareWave voices
-  // The name provided determines the name of the directory
-  // where the presets and sequences are stored
+
   SynthGUIManager<SquareWave> synthManager{"SquareWave"};
 
-  // This function is called right after the window is created
-  // It provides a grphics context to initialize ParameterGUI
-  // It's also a good place to put things that should
-  // happen once at startup.
   void onCreate() override
   {
-    navControl().active(false); // Disable navigation via keyboard, since we
-                                // will be using keyboard for note triggering
-
-    // Set sampling rate for Gamma objects from app's audio
+    navControl().active(false); 
     gam::sampleRate(audioIO().framesPerSecond());
-
     imguiInit();
-
-    // Play example sequence. Comment this line to start from scratch
-    // synthManager.synthSequencer().playSequence("synth1.synthSequence");
     synthManager.synthRecorder().verbose(true);
   }
 
-  // The audio callback function. Called when audio hardware requires data
   void onSound(AudioIOData &io) override
   {
     synthManager.render(io); // Render audio
