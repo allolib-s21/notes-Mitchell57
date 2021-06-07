@@ -4,7 +4,7 @@ Stores a list of notes
 
 ### Chord Names
 
-- Key *required
+- Key (required)
     - (A-G)
 - Sign
     - (#, b, n)
