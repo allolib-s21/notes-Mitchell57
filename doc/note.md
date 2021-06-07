@@ -163,6 +163,3 @@ The Note object stores pitch values as Midi index, and provides methods that all
 
 - see [Scale](doc/scale.md)
 
-
-
-[Chord](https://www.notion.so/Chord-5907b736d2a2423e8fba5028ab57096b)
