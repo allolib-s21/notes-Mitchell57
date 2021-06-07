@@ -24,3 +24,7 @@
   3. All constants and labels are in `theory` namespace 
     a. On VS Code, should be able to autocomplete 
     b. Add `using namespace theory` to declare Notes, Chords, and Scales without code getting too verbose
+
+### Documentation
+
+- [Chord](chord.md)
