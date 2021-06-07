@@ -24,6 +24,8 @@ Stores a list of notes
     - / + (A-G)
     - Specifies inversion, e.g. "F/C"
 
+
+
 ### Constructors
 
 `Chord(string name, int octave=3)`
@@ -33,10 +35,12 @@ Input: Chord name as string, e.g. Chord("CM7")
 `Chord(Note* root, string name, int octave=3)`
 
     e.g. Chord(&note, "dim7")
+    
 
 `Chord(vector<int> idxs)` 
 
     Used by Scale for building scale chords
+
 
 ### Accessors
 
@@ -44,11 +48,13 @@ Input: Chord name as string, e.g. Chord("CM7")
 
     returns vector of Notes
 
+
 `chord.degree(theory::chord_degree)`
 
     returns Note at specified degree
 
     degrees: root, third, fifth, seventh, ninth, eleventh, thirteenth
+
 
 ### Modifiers
 
@@ -56,17 +62,20 @@ Input: Chord name as string, e.g. Chord("CM7")
 
     moves the bottom note up an octave
 
+
 `chord.drop(chord_degree)`
 
     moves the specified degree down an octave
 
     default: moves whole chord down an octave
 
+
 `chord.raise(chord_degree)`
 
     moves the specified degree up an octave
 
     default: moves whole chord up an octave
+
 
 `chord.match(Chord source)`
 
