@@ -30,16 +30,16 @@ Stores a list of notes
 
 `Chord(string name, int octave=3)`
 
-Input: Chord name as string, e.g. Chord("CM7")
+  Input: Chord name as string, e.g. Chord("CM7")
 
 `Chord(Note* root, string name, int octave=3)`
 
-    e.g. Chord(&note, "dim7")
+  e.g. Chord(&note, "dim7")
     
 
 `Chord(vector<int> idxs)` 
 
-    Used by Scale for building scale chords
+  Used by Scale for building scale chords
 
 
 ### Accessors
